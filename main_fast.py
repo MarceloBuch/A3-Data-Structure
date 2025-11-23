@@ -367,6 +367,11 @@ class App(ctk.CTk):
         except Exception as e:
             messagebox.showerror("Erro de ordenação", str(e))
             return
+        
+        print("\n--- MÉTRICAS DE ORDENAÇÃO ---")
+        print(sm) 
+        print("---------------------------\n")
+
         self.filtered = sorted_data
         self.sorted_by_key = self.sort_key.get()
         self.refresh_table(self.filtered)
@@ -396,6 +401,11 @@ class App(ctk.CTk):
                 assume_sorted = True
         res, met = search_by_value(self.search_algo.get(), data, key=lambda f: f.price,
                                    target=target, mode=self.search_mode.get(), assume_sorted=assume_sorted)
+        
+        print("\n--- MÉTRICAS DE BUSCA ---")
+        print(met)
+        print("-----------------------\n")
+
         if not res:
             self.metrics_lbl.configure(text=f"Busca ({met.algorithm}, {met.details}) {met.time_ms:.2f} ms — 0 itens.")
             messagebox.showinfo("Sem resultados", "Nada encontrado para o critério.")
