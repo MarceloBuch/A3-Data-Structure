@@ -200,7 +200,7 @@ class App(ctk.CTk):
         ctk.CTkLabel(r2, text="Ordenar por").pack(side="left")
         ctk.CTkComboBox(r2, variable=self.sort_key, width=140, values=["price","depart_time","duration"]).pack(side="left", padx=(4,10))
         ctk.CTkLabel(r2, text="Algoritmo").pack(side="left")
-        ctk.CTkComboBox(r2, variable=self.sort_algo, width=150, values=["timsort","mergesort","quicksort","insertion","selection","bubble"]).pack(side="left", padx=(4,10))
+        ctk.CTkComboBox(r2, variable=self.sort_algo, width=150, values=["timsort","mergesort","quicksort"]).pack(side="left", padx=(4,10))
         ctk.CTkCheckBox(r2, text="Decrescente", variable=self.sort_desc).pack(side="left")
 
         ctk.CTkLabel(r2, text="Busca por preço").pack(side="left", padx=(20,6))
